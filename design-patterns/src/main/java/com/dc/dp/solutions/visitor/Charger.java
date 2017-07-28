@@ -1,6 +1,6 @@
 package com.dc.dp.solutions.visitor;
 
-public class Charger {
+public class Charger implements IVisitable {
 	public String name;
 	public int Id;
 	public String color;
@@ -29,6 +29,10 @@ public class Charger {
 	}
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
+	}
+	@Override
+	public void accept(IVisitor visitor) {
+		visitor.visit(this);
 	}
 	
 }
